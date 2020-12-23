@@ -1,0 +1,9 @@
+C:\EUROCOLORI\Euroformulations4\Euroformulations4\bin\Debug\include\driver\DriverInstaller.exe.config
+C:\EUROCOLORI\Euroformulations4\Euroformulations4\bin\Debug\include\driver\DriverInstaller.exe
+C:\EUROCOLORI\Euroformulations4\Euroformulations4\bin\Debug\include\driver\DriverInstaller.pdb
+C:\EUROCOLORI\Euroformulations4\DriverInstaller\obj\Debug\DriverInstaller.frmGUI.resources
+C:\EUROCOLORI\Euroformulations4\DriverInstaller\obj\Debug\DriverInstaller.Properties.Resources.resources
+C:\EUROCOLORI\Euroformulations4\DriverInstaller\obj\Debug\DriverInstaller.csproj.GenerateResource.cache
+C:\EUROCOLORI\Euroformulations4\DriverInstaller\obj\Debug\DriverInstaller.csproj.CoreCompileInputs.cache
+C:\EUROCOLORI\Euroformulations4\DriverInstaller\obj\Debug\DriverInstaller.exe
+C:\EUROCOLORI\Euroformulations4\DriverInstaller\obj\Debug\DriverInstaller.pdb

@@ -1,0 +1,10 @@
+[DATABASE]
+ServerIP=localhost
+StaticPort = -1
+
+[CLOUD]
+Address=https://www.euroformulations.com/MyCloud/
+
+[UPDATE]
+AdviseUpdated=0
+

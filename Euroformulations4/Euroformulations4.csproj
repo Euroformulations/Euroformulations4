@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F90F387B-D962-4658-8FA6-CDD674508188}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Euroformulations4</RootNamespace>
+    <AssemblyName>Euroformulations4</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ef4_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\external_dll\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\external_dll\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder">
+      <HintPath>bin\Release\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="S22.Imap">
+      <HintPath>bin\Release\S22.Imap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Library\Controls\RadioButtonList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Library\Data\Database\ClusterGenerator.cs" />
+    <Compile Include="Library\Data\Database\DBImport.cs" />
+    <Compile Include="Library\Data\Database\DBStructureManager.cs" />
+    <Compile Include="Library\Data\Dispositivi\SP62\DispositivoSP62.cs" />
+    <Compile Include="Library\Data\Dispositivi\SP62\frmFunzioniSP62.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Library\Data\Dispositivi\SP62\frmFunzioniSP62.Designer.cs">
+      <DependentUpon>frmFunzioniSP62.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Data\Settings\DBSettings.cs" />
+    <Compile Include="Library\Email.cs" />
+    <Compile Include="Library\Formulation\CostCalculator.cs" />
+    <Compile Include="Library\Formulation\Formula.cs" />
+    <Compile Include="Library\Formulation\StaticDispenser.cs" />
+    <Compile Include="Library\Ordine.cs" />
+    <Compile Include="SubWindows\ColorSearch\frmGetManualColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\ColorSearch\frmGetManualColor.Designer.cs">
+      <DependentUpon>frmGetManualColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\ErogazioneLibera\frmFreeDispenser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\ErogazioneLibera\frmFreeDispenser.Designer.cs">
+      <DependentUpon>frmFreeDispenser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmFormulaPrev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmFormulaPrev.Designer.cs">
+      <DependentUpon>frmFormulaPrev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmOrders.Designer.cs">
+      <DependentUpon>frmOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmInputBox.Designer.cs">
+      <DependentUpon>frmInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmNumErogazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmNumErogazioni.Designer.cs">
+      <DependentUpon>frmNumErogazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulePersonal\frmEditManuale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulePersonal\frmEditManuale.Designer.cs">
+      <DependentUpon>frmEditManuale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\NoFunctions\NoSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\NoFunctions\NoSearch.Designer.cs">
+      <DependentUpon>NoSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Settings\frmDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Settings\frmDatabase.Designer.cs">
+      <DependentUpon>frmDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Settings\frmDBImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Settings\frmDBImport.Designer.cs">
+      <DependentUpon>frmDBImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Settings\FattoriCorrettivi\frmFattoreCorrettivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Settings\FattoriCorrettivi\frmFattoreCorrettivo.Designer.cs">
+      <DependentUpon>frmFattoreCorrettivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Settings\Prodotti\frmNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Settings\Prodotti\frmNewProduct.Designer.cs">
+      <DependentUpon>frmNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Statistiche\frmStatBasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Statistiche\frmStatBasi.Designer.cs">
+      <DependentUpon>frmStatBasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Statistiche\frmStatSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Statistiche\frmStatSpace.Designer.cs">
+      <DependentUpon>frmStatSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmAutoInstaller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmAutoInstaller.Designer.cs">
+      <DependentUpon>frmAutoInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmDemo.Designer.cs">
+      <DependentUpon>frmDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmDBUpdater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmDBUpdater.Designer.cs">
+      <DependentUpon>frmDBUpdater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmUpdatedInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmUpdatedInfo.Designer.cs">
+      <DependentUpon>frmUpdatedInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmWelcome.Designer.cs">
+      <DependentUpon>frmWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmLoading.Designer.cs">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmEuroFormulationsNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmEuroFormulationsNew.Designer.cs">
+      <DependentUpon>frmEuroFormulationsNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Attivazioni.cs" />
+    <Compile Include="Library\Data\Clienti.cs" />
+    <Compile Include="Library\Data\Dispositivi\ColorCatch\DispositivoColorCatch3.cs" />
+    <Compile Include="Library\Data\Dispositivi\Cube\Cube.cs" />
+    <Compile Include="Library\Data\Dispositivi\Cube\DataHandler.cs" />
+    <Compile Include="Library\Data\Dispositivi\Cube\DispositivoCube.cs" />
+    <Compile Include="Library\Data\Dispositivi\Cube\frmFunzioniCube.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Library\Data\Dispositivi\Cube\frmFunzioniCube.Designer.cs">
+      <DependentUpon>frmFunzioniCube.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Data\Dispositivi\DispositiviManager.cs" />
+    <Compile Include="Library\Data\Dispositivi\HandleClinet.cs" />
+    <Compile Include="Library\Data\Dispositivi\iOne\DispositivoOne.cs" />
+    <Compile Include="Library\Data\Dispositivi\iOne\frmFunzioniOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Library\Data\Dispositivi\iOne\frmFunzioniOne.Designer.cs">
+      <DependentUpon>frmFunzioniOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Data\Dispositivi\Select\DispositivoSelect.cs" />
+    <Compile Include="Library\Data\Dispositivi\Select\frmFunzioniSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Library\Data\Dispositivi\Select\frmFunzioniSelect.Designer.cs">
+      <DependentUpon>frmFunzioniSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Data\Dispositivi\DispositivoBase.cs" />
+    <Compile Include="Library\Licenze.cs" />
+    <Compile Include="Library\Harmony.cs" />
+    <Compile Include="Library\Data\Database\DBConnector.cs" />
+    <Compile Include="Library\Data\Machine.cs" />
+    <Compile Include="Library\Data\Settings\SharedSettings.cs" />
+    <Compile Include="Library\Data\Database\DBConnect_Npgsql.cs" />
+    <Compile Include="Library\Colore.cs" />
+    <Compile Include="Library\AnimationMenuManager.cs" />
+    <Compile Include="Library\Log.cs" />
+    <Compile Include="Library\IniFileUnicode.cs" />
+    <Compile Include="Library\Language.cs" />
+    <Compile Include="Library\Print\PrinterManager.cs" />
+    <Compile Include="Library\RicercaColore.cs" />
+    <Compile Include="Menu\ButtonInfo.cs" />
+    <Compile Include="Menu\MenuManager.cs" />
+    <Compile Include="Library\ContainerColori.cs" />
+    <Compile Include="SubWindows\FormulePersonal\Formula.cs" />
+    <Compile Include="Library\GVar.cs" />
+    <Compile Include="Library\IniFile.cs" />
+    <Compile Include="Library\Spettrofotometro.cs" />
+    <Compile Include="SubWindows\Clienti\frmVisualizzaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Clienti\frmVisualizzaCliente.Designer.cs">
+      <DependentUpon>frmVisualizzaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Clienti\frmClienteEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Clienti\frmClienteEdit.Designer.cs">
+      <DependentUpon>frmClienteEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Costi\frmCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Costi\frmCopy.Designer.cs">
+      <DependentUpon>frmCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Costi\frmLattaggi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Costi\frmLattaggi.Designer.cs">
+      <DependentUpon>frmLattaggi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Costi\frmColBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Costi\frmColBase.Designer.cs">
+      <DependentUpon>frmColBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Costi\frmListini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Costi\frmListini.Designer.cs">
+      <DependentUpon>frmListini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmOunceDispensing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmOunceDispensing.Designer.cs">
+      <DependentUpon>frmOunceDispensing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmFormulaSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmFormulaSearch.Designer.cs">
+      <DependentUpon>frmFormulaSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmHistory.Designer.cs">
+      <DependentUpon>frmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Amministrazione\frmECAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Amministrazione\frmECAdmin.Designer.cs">
+      <DependentUpon>frmECAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\ColorSearch\frmGetColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\ColorSearch\frmGetColor.Designer.cs">
+      <DependentUpon>frmGetColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Settings\frmImportExportMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Settings\frmImportExportMachine.Designer.cs">
+      <DependentUpon>frmImportExportMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmDBImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\WindowMain\frmDBImport.Designer.cs">
+      <DependentUpon>frmDBImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulePersonal\frmVisualizzaPersonale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulePersonal\frmVisualizzaPersonale.Designer.cs">
+      <DependentUpon>frmVisualizzaPersonale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmComplementari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmComplementari.Designer.cs">
+      <DependentUpon>frmComplementari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulePersonal\frmFormulaPersonale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulePersonal\frmFormulaPersonale.Designer.cs">
+      <DependentUpon>frmFormulaPersonale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Amministrazione\frmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Amministrazione\frmPassword.Designer.cs">
+      <DependentUpon>frmPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Settings\frmDispositivi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Settings\frmDispositivi.Designer.cs">
+      <DependentUpon>frmDispositivi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Settings\frmMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Settings\frmMachine.Designer.cs">
+      <DependentUpon>frmMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Statistiche\frmStatisticheCharts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Statistiche\frmStatisticheCharts.Designer.cs">
+      <DependentUpon>frmStatisticheCharts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Statistiche\frmGrafico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Statistiche\frmGrafico.Designer.cs">
+      <DependentUpon>frmGrafico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmFormula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\FormulaSelection\frmFormula.Designer.cs">
+      <DependentUpon>frmFormula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubWindows\Settings\frmImpostazioniGenerali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Settings\frmImpostazioniGenerali.Designer.cs">
+      <DependentUpon>frmImpostazioniGenerali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Qualita\frmQualitaColori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Qualita\frmQualitaColori.Designer.cs">
+      <DependentUpon>frmQualitaColori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Qualita\frmQualita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Qualita\frmQualita.Designer.cs">
+      <DependentUpon>frmQualita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\ColorSearch\frmRicercaColore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\ColorSearch\frmRicercaColore.Designer.cs">
+      <DependentUpon>frmRicercaColore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindows\Statistiche\frmStatCol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindows\Statistiche\frmStatCol.Designer.cs">
+      <DependentUpon>frmStatCol.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Library\Data\Dispositivi\SP62\frmFunzioniSP62.resx">
+      <DependentUpon>frmFunzioniSP62.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\ColorSearch\frmGetManualColor.resx">
+      <DependentUpon>frmGetManualColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\ErogazioneLibera\frmFreeDispenser.resx">
+      <DependentUpon>frmFreeDispenser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulaSelection\frmFormulaPrev.resx">
+      <DependentUpon>frmFormulaPrev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulaSelection\frmOrders.resx">
+      <DependentUpon>frmOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulaSelection\frmInputBox.resx">
+      <DependentUpon>frmInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulaSelection\frmNumErogazioni.resx">
+      <DependentUpon>frmNumErogazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulePersonal\frmEditManuale.resx">
+      <DependentUpon>frmEditManuale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\NoFunctions\NoSearch.resx">
+      <DependentUpon>NoSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Settings\frmDatabase.resx">
+      <DependentUpon>frmDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Settings\frmDBImport.resx">
+      <DependentUpon>frmDBImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Settings\FattoriCorrettivi\frmFattoreCorrettivo.resx">
+      <DependentUpon>frmFattoreCorrettivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Settings\Prodotti\frmNewProduct.resx">
+      <DependentUpon>frmNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Statistiche\frmStatBasi.resx">
+      <DependentUpon>frmStatBasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Statistiche\frmStatSpace.resx">
+      <DependentUpon>frmStatSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\WindowMain\frmAutoInstaller.resx">
+      <DependentUpon>frmAutoInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\WindowMain\frmEuroFormulationsNew.resx">
+      <DependentUpon>frmEuroFormulationsNew.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\WindowMain\frmDemo.resx">
+      <DependentUpon>frmDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\WindowMain\frmDBUpdater.resx">
+      <DependentUpon>frmDBUpdater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\WindowMain\frmUpdatedInfo.resx">
+      <DependentUpon>frmUpdatedInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\WindowMain\frmWelcome.resx">
+      <DependentUpon>frmWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\WindowMain\frmLoading.resx">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Library\Data\Dispositivi\Cube\frmFunzioniCube.resx">
+      <DependentUpon>frmFunzioniCube.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Library\Data\Dispositivi\iOne\frmFunzioniOne.resx">
+      <DependentUpon>frmFunzioniOne.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Library\Data\Dispositivi\Select\frmFunzioniSelect.resx">
+      <DependentUpon>frmFunzioniSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SubWindows\Clienti\frmClienteEdit.resx">
+      <DependentUpon>frmClienteEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Clienti\frmVisualizzaCliente.resx">
+      <DependentUpon>frmVisualizzaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Costi\frmColBase.resx">
+      <DependentUpon>frmColBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Costi\frmCopy.resx">
+      <DependentUpon>frmCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Costi\frmLattaggi.resx">
+      <DependentUpon>frmLattaggi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Costi\frmListini.resx">
+      <DependentUpon>frmListini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulaSelection\frmOunceDispensing.resx">
+      <DependentUpon>frmOunceDispensing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulaSelection\frmFormulaSearch.resx">
+      <DependentUpon>frmFormulaSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulaSelection\frmHistory.resx">
+      <DependentUpon>frmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Amministrazione\frmECAdmin.resx">
+      <DependentUpon>frmECAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\ColorSearch\frmGetColor.resx">
+      <DependentUpon>frmGetColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Settings\frmImportExportMachine.resx">
+      <DependentUpon>frmImportExportMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\WindowMain\frmDBImport.resx">
+      <DependentUpon>frmDBImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulePersonal\frmVisualizzaPersonale.resx">
+      <DependentUpon>frmVisualizzaPersonale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulaSelection\frmComplementari.resx">
+      <DependentUpon>frmComplementari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulaSelection\frmFormula.resx">
+      <DependentUpon>frmFormula.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\FormulePersonal\frmFormulaPersonale.resx">
+      <DependentUpon>frmFormulaPersonale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Amministrazione\frmPassword.resx">
+      <DependentUpon>frmPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Settings\frmDispositivi.resx">
+      <DependentUpon>frmDispositivi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Settings\frmMachine.resx">
+      <DependentUpon>frmMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Statistiche\frmGrafico.resx">
+      <DependentUpon>frmGrafico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Settings\frmImpostazioniGenerali.resx">
+      <DependentUpon>frmImpostazioniGenerali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Qualita\frmQualitaColori.resx">
+      <DependentUpon>frmQualitaColori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Qualita\frmQualita.resx">
+      <DependentUpon>frmQualita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\ColorSearch\frmRicercaColore.resx">
+      <DependentUpon>frmRicercaColore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Statistiche\frmStatCol.resx">
+      <DependentUpon>frmStatCol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindows\Statistiche\frmStatisticheCharts.resx">
+      <DependentUpon>frmStatisticheCharts.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Formula32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_cup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\escheresque_ste_%402X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subtle_white_feathers_%402X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icona.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shattered_%402X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icone32x32\1401202551_project.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icone32x32\1403100997_google_custom_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icone32x32\1401202903_statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icone32x32\1413373864_client_account_template.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icone32x32\1401203443_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1414525540_CMYK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subtle_white_feathers_%402X1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_brick_wall_%402X1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\footer2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo eu4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_step2.png" />
+    <None Include="Resources\update_step1.png" />
+    <None Include="Resources\machine.png" />
+    <None Include="Resources\devices_small.png" />
+    <None Include="Resources\formulaRounding.png" />
+    <None Include="Resources\relatedtonew.png" />
+    <None Include="Resources\relatedTo.png" />
+    <None Include="Resources\editFormula.png" />
+    <None Include="Resources\harmonic.png" />
+    <None Include="Resources\device_color_reader.png" />
+    <None Include="Resources\eyeFormula.png" />
+    <None Include="Resources\help11.gif" />
+    <None Include="Resources\help10.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\folder.ico" />
+    <None Include="Resources\Icone16x16\rsz_1415895719_25.png" />
+    <None Include="Resources\Icone16x16\add.png" />
+    <None Include="Resources\Icone32x32\1422044790_add.png" />
+    <None Include="Resources\logo_euroformulations4.png" />
+    <None Include="Resources\main_welcome.jpg" />
+    <None Include="Resources\1413205609_th-list-16.png" />
+    <None Include="Resources\1413205581_search.png" />
+    <None Include="Resources\1413205703_History.png" />
+    <None Include="Resources\sfondo_over2.png" />
+    <None Include="Resources\sfondo_over.png" />
+    <None Include="Resources\sfondo.png" />
+    <None Include="Resources\wait.gif" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\db.png" />
+    <None Include="Resources\1422112245_Businessman.png" />
+    <None Include="Resources\butterfly.png" />
+    <None Include="Resources\verified.png" />
+    <None Include="Resources\database.png" />
+    <None Include="Resources\1421697226_color_fill.png" />
+    <None Include="Resources\1421688328_total_plan_cost.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\Icone16x16\1413373864_client_account_template.png" />
+    <None Include="Resources\license16.png" />
+    <None Include="Resources\license.png" />
+    <None Include="Resources\Icone16x16\1418162978_list-16.png" />
+    <None Include="Resources\Icone32x32\1418162618_total_plan_cost.png" />
+    <None Include="Resources\Icone16x16\ViewCustumer.png" />
+    <None Include="Resources\Icone16x16\1415896699_control-center2.png" />
+    <None Include="Resources\Icone16x16\1415896646_chart_bar.png" />
+    <None Include="Resources\Icone16x16\1413205789_personal.png" />
+    <None Include="Resources\Icone16x16\1415896583_color-swatch.png" />
+    <None Include="Resources\Icone16x16\1415896591_color-line.png" />
+    <None Include="Resources\Icone16x16\1415896521_color_pencil.png" />
+    <None Include="Resources\Icone16x16\1413916215_color_management.png" />
+    <None Include="Resources\Icone16x16\1416403654_New_document.png" />
+    <None Include="Resources\Icone32x32\1413834080_Pantone.png" />
+    <None Include="Resources\personal.png" />
+    <None Include="Resources\chart.png" />
+    <None Include="Resources\confirm-small.gif" />
+    <None Include="Resources\expand-gray.png" />
+    <None Include="Resources\collapse-gray.png" />
+    <None Include="Resources\collapse.png" />
+    <None Include="Resources\expand.png" />
+    <None Include="Resources\spettrocolore.png" />
+    <None Include="Resources\blu-folder.png" />
+    <None Include="Resources\folder-open.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\calibration.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\pipette.png" />
+    <None Include="Resources\go.png" />
+    <None Include="Resources\printer-24x24.png" />
+    <None Include="Resources\printer-16x16.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\button-content-lightblu.png" />
+    <None Include="Resources\button-light-violet.png" />
+    <None Include="Resources\button-violet.png" />
+    <None Include="Resources\button-orange.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\Information.png" />
+    <None Include="Resources\button-menu-blu.png" />
+    <None Include="Resources\button-menu-green.png" />
+    <None Include="Resources\ready.png" />
+    <None Include="Resources\icona4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="external_dll\apidsp_windows.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="external_dll\apidsp_windows_x64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="external_dll\hasp_net_windows.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="external_dll\hasp_windows_102849.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="external_dll\hasp_windows_x64_102849.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="external_dll\Ionic.Zip.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="external_dll\MySql.Data.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="external_dll\S22.Imap.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="ef4 immagini\shopping-cart.png" />
+    <None Include="ef4 immagini\circle-yellow.png" />
+    <None Include="ef4 immagini\circle-green.png" />
+    <None Include="ef4 immagini\circle-orange.png" />
+    <None Include="ef4 immagini\circle-gray.ico" />
+    <None Include="ef4 immagini\circle-32.png" />
+    <Content Include="ef4_icon.ico" />
+    <None Include="Resources\circle_orange.png" />
+    <None Include="Resources\circle_green.png" />
+    <None Include="Resources\circle_red.png" />
+    <None Include="Resources\info28.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\ok3.png" />
+    <None Include="Resources\info47.png" />
+    <None Include="Resources\eclogo.png" />
+    <None Include="Resources\color7.png" />
+    <None Include="Resources\headphone16.png" />
+    <None Include="Resources\award3.png" />
+    <None Include="Resources\database38_16.png" />
+    <None Include="Resources\drop18.png" />
+    <None Include="Resources\edit5.png" />
+    <None Include="Resources\tools6.png" />
+    <None Include="Resources\paint3.png" />
+    <None Include="Resources\paint111.png" />
+    <None Include="Resources\document238.png" />
+    <None Include="Resources\bars-graphic_2.png" />
+    <None Include="Resources\magnifying-glass11.png" />
+    <None Include="Resources\color8.png" />
+    <None Include="Resources\rectangular4.png" />
+    <None Include="Resources\archive44.png" />
+    <None Include="Resources\wall clock.png" />
+    <None Include="Resources\magnifier52.png" />
+    <None Include="Resources\magnifier52 %281%29.png" />
+    <None Include="Resources\list-1.png" />
+    <None Include="Resources\logoef4.png" />
+    <None Include="Resources\wall clock_64.png" />
+    <None Include="Resources\water-drop_64.png" />
+    <None Include="Resources\paint88_64.png" />
+    <None Include="Resources\bars-graphicb.png" />
+    <None Include="Resources\magnifier52b.png" />
+    <None Include="Resources\card33.png" />
+    <None Include="Resources\paint88.png" />
+    <None Include="Resources\users53.png" />
+    <None Include="Resources\gear39.png" />
+    <None Include="Resources\coins15.png" />
+    <None Include="Resources\bars-graphic.png" />
+    <None Include="Resources\business12.png" />
+    <None Include="Resources\choosing.png" />
+    <None Include="Resources\documents7.png" />
+    <None Include="Resources\hand218.png" />
+    <None Include="Resources\edit-9-48.png" />
+    <None Include="Resources\edit-9-32.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
