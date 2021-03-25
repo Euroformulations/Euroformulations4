@@ -665,8 +665,11 @@ namespace Euroformulations4.SubWindows.FormulaSelection
 
                     for (int i = 0; i < formula.ColorantsCount; i++)
                     {
-                        dgFormula.Rows[i].Cells[2].Value = "*";
-                        dgFormula.Rows[i].Cells[3].Value = "*";
+                        double qml = Library.Formulation.Formula.ConvertValue(formula.ColorantQta(i), formula.ColorantsUnit, Library.Formulation.eUnita.ml, formula.ColorantDensita(i));
+                        double qgr = Library.Formulation.Formula.ConvertValue(formula.ColorantQta(i), formula.ColorantsUnit, Library.Formulation.eUnita.gr, formula.ColorantDensita(i));
+
+                        dgFormula.Rows[i].Cells[2].Value = Math.Round(qgr, Convert.ToInt32(sharedSettings.GetValue("DecimalNumber"))).ToString(sNumFormat);
+                        dgFormula.Rows[i].Cells[3].Value = Math.Round(qml, Convert.ToInt32(sharedSettings.GetValue("DecimalNumber"))).ToString(sNumFormat);
                         dgFormula.Rows[i].Cells[4].Value = "";
                     }
 
@@ -685,7 +688,7 @@ namespace Euroformulations4.SubWindows.FormulaSelection
                             for (int i = 0; i < formula.ColorantsCount; i++)
                             {
                                 double dCostoColorante = formula.GetCost_Colorant(i, idlistino);
-                                dgFormula.Rows[i].Cells[4].Value = "*";
+                                dgFormula.Rows[i].Cells[4].Value = Math.Round(dCostoColorante, 2).ToString("0.00") + " " + itemList.valuta;
                                 dCostoColoranti += dCostoColorante;
                             }
 
@@ -730,8 +733,11 @@ namespace Euroformulations4.SubWindows.FormulaSelection
 
                 for (int i = 0; i < formula.ColorantsCount; i++)
                 {
-                    dgFormula.Rows[i].Cells[2].Value = "*";
-                    dgFormula.Rows[i].Cells[3].Value = "*";
+                    double qml = Library.Formulation.Formula.ConvertValue(formula.ColorantQta(i), formula.ColorantsUnit, Library.Formulation.eUnita.ml, formula.ColorantDensita(i));
+                    double qgr = Library.Formulation.Formula.ConvertValue(formula.ColorantQta(i), formula.ColorantsUnit, Library.Formulation.eUnita.gr, formula.ColorantDensita(i));
+
+                    dgFormula.Rows[i].Cells[2].Value = Math.Round(qgr, Convert.ToInt32(sharedSettings.GetValue("DecimalNumber"))).ToString(sNumFormat);
+                    dgFormula.Rows[i].Cells[3].Value = Math.Round(qml, Convert.ToInt32(sharedSettings.GetValue("DecimalNumber"))).ToString(sNumFormat);
                     dgFormula.Rows[i].Cells[4].Value = "";
                 }
 
@@ -750,7 +756,7 @@ namespace Euroformulations4.SubWindows.FormulaSelection
                         for (int i = 0; i < formula.ColorantsCount; i++)
                         {
                             double dCostoColorante = formula.GetCost_Colorant(i, idlistino);
-                            dgFormula.Rows[i].Cells[4].Value = "*";
+                            dgFormula.Rows[i].Cells[4].Value = Math.Round(dCostoColorante, 2).ToString("0.00") + " " + itemList.valuta;
                             dCostoColoranti += dCostoColorante;
                         }
                         SetCost(dCostoBase, dCostoColoranti, itemList.valuta);
@@ -1006,8 +1012,11 @@ namespace Euroformulations4.SubWindows.FormulaSelection
 
                 for (int i = 0; i < formula.ColorantsCount; i++)
                 {
-                    dgFormula.Rows[i].Cells[2].Value = "*";
-                    dgFormula.Rows[i].Cells[3].Value = "*";
+                    double qml = Library.Formulation.Formula.ConvertValue(formula.ColorantQta(i), formula.ColorantsUnit, Library.Formulation.eUnita.ml, formula.ColorantDensita(i));
+                    double qgr = Library.Formulation.Formula.ConvertValue(formula.ColorantQta(i), formula.ColorantsUnit, Library.Formulation.eUnita.gr, formula.ColorantDensita(i));
+
+                    dgFormula.Rows[i].Cells[2].Value = Math.Round(qgr, Convert.ToInt32(sharedSettings.GetValue("DecimalNumber"))).ToString(sNumFormat);
+                    dgFormula.Rows[i].Cells[3].Value = Math.Round(qml, Convert.ToInt32(sharedSettings.GetValue("DecimalNumber"))).ToString(sNumFormat);
                     dgFormula.Rows[i].Cells[4].Value = "";
                 }
 
@@ -1026,7 +1035,7 @@ namespace Euroformulations4.SubWindows.FormulaSelection
                         for (int i = 0; i < formula.ColorantsCount; i++)
                         {
                             double dCostoColorante = formula.GetCost_Colorant(i, idlistino);
-                            dgFormula.Rows[i].Cells[4].Value = "*";
+                            dgFormula.Rows[i].Cells[4].Value = Math.Round(dCostoColorante, 2).ToString("0.00") + " " + itemList.valuta;
                             dCostoColoranti += dCostoColorante;
                         }
                         SetCost(dCostoBase, dCostoColoranti, itemList.valuta);
