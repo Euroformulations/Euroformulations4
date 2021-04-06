@@ -208,8 +208,8 @@ namespace Euroformulations4.SubWindows.FormulaSelection
                     int value2 = (int)((mlResto1 * secondaAsta) / ouncetype);
                     double mlResto2 = mlResto1 - ((ouncetype * (double)value2) / secondaAsta);
                     
-                    dgDati.Rows[i].Cells[2].Value = "*";
-                    dgDati.Rows[i].Cells[3].Value = "*";
+                    dgDati.Rows[i].Cells[2].Value = value1.ToString();
+                    dgDati.Rows[i].Cells[3].Value = value2.ToString();
                     
 
 
